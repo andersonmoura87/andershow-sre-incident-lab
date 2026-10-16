@@ -19,6 +19,7 @@ Laboratório público de investigação e recuperação de incidentes simulados 
 | INC-001 | Saint John — escrita contínua em log | Linux, processos, sinais, descritores de arquivo | Resolvido; checker oficial aprovado | [Consultar INC-001](incidents/001-saint-john/incident-report.md) |
 | INC-002 | Linux Server Review — investigação de desempenho | Linux, PostgreSQL, Flask, HAProxy, HTTP | Investigação concluída; gargalo arquitetural não resolvido | [Consultar INC-002](incidents/002-linux-server-review/incident-report.md) |
 | INC-003 | Tokamachi — controle de fluxo em named pipe | Bash, FIFO, IPC, backpressure | Resolvido; checker oficial aprovado | [Consultar INC-003](incidents/003-tokamachi/incident-report.md) |
+| INC-004 | Salta — falha na inicialização de aplicação Node.js | Docker, Node.js, nginx, portas TCP | Resolvido; checker oficial aprovado | [Consultar INC-004](incidents/004-salta/incident-report.md) |
 
 Os relatórios distinguem observações, hipóteses, intervenções, validações e limitações. A aprovação de um checker confirma os critérios do laboratório, não a confiabilidade de uma solução em produção.
 
