@@ -42,6 +42,18 @@ Os cenários são simulados e executados em ambientes de laboratório. As conclu
 
 [Consultar relatório INC-003](003-tokamachi/incident-report.md)
 
+### INC-004 — Salta
+
+**Domínio:** Docker / Node.js / Serviços Linux / Redes
+
+**Problema:** aplicação Node.js containerizada indisponível devido a um comando de inicialização incorreto e à ocupação da porta HTTP do host pelo nginx.
+
+**Competências exercitadas:** análise de logs Docker, inspeção de Dockerfile, construção de imagens, diagnóstico de serviços Linux, permissões administrativas e publicação de portas.
+
+**Resultado:** aplicação recuperada conforme os critérios do laboratório; checker oficial aprovado em 9min42s, sem utilização de dicas.
+
+[Consultar relatório INC-004](004-salta/incident-report.md)
+
 ## Organização das evidências
 
 Cada diretório de incidente contém:
