@@ -12,21 +12,24 @@ Laboratório público de investigação e recuperação de incidentes simulados 
 - Relatórios em português; comandos e saídas preservados no idioma original.
 - Métricas de desempenho apenas com contexto, carga e método de medição.
 
-## Catálogo
+## Catálogo de incidentes
 
-| ID | Cenário | Situação | Validação |
-|---|---|---|---|
-| INC-001 | Saint John — processo escrevendo em log | Concluído | Checker do laboratório; pós-verificação independente não registrada |
-| INC-002 | Linux Server Review — desempenho e banco | Investigação encerrada | Testes manuais; cenário sem checker oficial |
-| INC-003 | Tokamachi — Named Pipe | Resolvido | `check.sh` retornou `OK`; 6min04s, 0 dicas |
+| ID | Cenário | Tecnologias | Resultado | Relatório |
+|---|---|---|---|---|
+| INC-001 | Saint John — escrita contínua em log | Linux, processos, sinais, descritores de arquivo | Resolvido; checker oficial aprovado | [Consultar INC-001](incidents/001-saint-john/incident-report.md) |
+| INC-002 | Linux Server Review — investigação de desempenho | Linux, PostgreSQL, Flask, HAProxy, HTTP | Investigação concluída; gargalo arquitetural não resolvido | [Consultar INC-002](incidents/002-linux-server-review/incident-report.md) |
+| INC-003 | Tokamachi — controle de fluxo em named pipe | Bash, FIFO, IPC, backpressure | Resolvido; checker oficial aprovado | [Consultar INC-003](incidents/003-tokamachi/incident-report.md) |
+
+Os relatórios distinguem observações, hipóteses, intervenções, validações e limitações. A aprovação de um checker confirma os critérios do laboratório, não a confiabilidade de uma solução em produção.
 
 ## Navegação
 
-- [Incidentes](incidents/)
+- [Catálogo técnico de incidentes](incidents/README.md)
 - [Modelo de relatório](templates/incident-report.md)
-- [Metodologia](docs/methodology.md)
-- [Runbooks](runbooks/)
+- [Metodologia de investigação](docs/methodology.md)
+- [Checklist de qualidade dos incidentes](docs/incident-quality-checklist.md)
+- [Runbooks](runbooks/README.md)
 
 ## Próximos passos
 
-INC-004: troubleshooting Docker, selecionado após a publicação da primeira versão do repositório.
+INC-004: selecionar um cenário de troubleshooting com maior complexidade operacional, priorizando Docker, serviços Linux ou redes.
