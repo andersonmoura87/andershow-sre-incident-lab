@@ -1,0 +1,22 @@
+name: Validar documentação
+on:
+  push:
+  pull_request:
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verificar estrutura mínima
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f README.md
+          test -f templates/incident-report.md
+          for id in 001-saint-john 002-linux-server-review 003-tokamachi; do
+            test -s "incidents/$id/incident-report.md"
+          done
+          if grep -R -n -E 'AKIA[0-9A-Z]{16}|-----BEGIN (RSA |EC |OPENSSH )?PRIVATE KEY-----' --include='*.md' .; then
+            echo 'Possível segredo detectado'
+            exit 1
+          fi
