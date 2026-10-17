@@ -29,7 +29,8 @@ Os relatórios distinguem observações, hipóteses, intervenções, validaçõe
 ## Navegação
 
 - [Catálogo técnico de incidentes](incidents/README.md)
-- [Modelo de relatório](templates/incident-report.md)
+- [Modelo de relatório v2](templates/incident-report.md)
+- [Modelo de relatório v1](templates/incident-report-v1.md)
 - [Metodologia de investigação](docs/methodology.md)
 - [Checklist de qualidade dos incidentes](docs/incident-quality-checklist.md)
 - [Runbooks](runbooks/README.md)
