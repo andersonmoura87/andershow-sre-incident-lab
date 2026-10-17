@@ -21,6 +21,7 @@ Laboratório público de investigação e recuperação de incidentes simulados 
 | INC-003 | Tokamachi — controle de fluxo em named pipe | Bash, FIFO, IPC, backpressure | Resolvido; checker oficial aprovado | [Consultar INC-003](incidents/003-tokamachi/incident-report.md) |
 | INC-004 | Salta — falha na inicialização de aplicação Node.js | Docker, Node.js, nginx, portas TCP | Resolvido; checker oficial aprovado | [Consultar INC-004](incidents/004-salta/incident-report.md) |
 | INC-005 | Manhattan — falha de escrita no PostgreSQL | Linux, PostgreSQL, capacidade de disco | Resolvido; checker oficial aprovado | [Consultar INC-005](incidents/005-manhattan/incident-report.md) |
+| INC-006 | Tokyo — arquivo web inacessível | Apache HTTP Server, Linux, firewall, permissões | Resolvido; checker oficial aprovado | [Consultar INC-006](incidents/006-tokyo/incident-report.md) |
 
 Os relatórios distinguem observações, hipóteses, intervenções, validações e limitações. A aprovação de um checker confirma os critérios do laboratório, não a confiabilidade de uma solução em produção.
 
