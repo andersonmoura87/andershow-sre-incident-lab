@@ -66,6 +66,18 @@ Os cenários são simulados e executados em ambientes de laboratório. As conclu
 
 [Consultar relatório INC-005](005-manhattan/incident-report.md)
 
+### INC-006 — Tokyo
+
+**Domínio:** Linux / Apache HTTP Server / Firewall / Permissões
+
+**Problema:** o arquivo web não era entregue ao cliente local. Uma regra da cadeia `INPUT` descartava TCP/80 e, depois da remoção dessa regra, o modo `600` de `index.html` produzia HTTP 403 para o atendimento como `www-data`.
+
+**Competências exercitadas:** reprodução com `curl`, leitura de unidade e socket, verificação de loopback, diagnóstico de `iptables` e `nft`, interpretação de HTTP 403 e permissões Unix.
+
+**Resultado:** arquivo servido conforme os critérios do laboratório; checker oficial aprovado em 8min25s, sem utilização de dicas. As duas correções ficaram restritas ao ambiente descartável.
+
+[Consultar relatório INC-006](006-tokyo/incident-report.md)
+
 ## Organização das evidências
 
 Cada diretório de incidente contém:
