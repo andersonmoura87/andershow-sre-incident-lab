@@ -20,6 +20,7 @@ Laboratório público de investigação e recuperação de incidentes simulados 
 | INC-002 | Linux Server Review — investigação de desempenho | Linux, PostgreSQL, Flask, HAProxy, HTTP | Investigação concluída; gargalo arquitetural não resolvido | [Consultar INC-002](incidents/002-linux-server-review/incident-report.md) |
 | INC-003 | Tokamachi — controle de fluxo em named pipe | Bash, FIFO, IPC, backpressure | Resolvido; checker oficial aprovado | [Consultar INC-003](incidents/003-tokamachi/incident-report.md) |
 | INC-004 | Salta — falha na inicialização de aplicação Node.js | Docker, Node.js, nginx, portas TCP | Resolvido; checker oficial aprovado | [Consultar INC-004](incidents/004-salta/incident-report.md) |
+| INC-005 | Manhattan — falha de escrita no PostgreSQL | Linux, PostgreSQL, capacidade de disco | Resolvido; checker oficial aprovado | [Consultar INC-005](incidents/005-manhattan/incident-report.md) |
 
 Os relatórios distinguem observações, hipóteses, intervenções, validações e limitações. A aprovação de um checker confirma os critérios do laboratório, não a confiabilidade de uma solução em produção.
 
@@ -33,4 +34,4 @@ Os relatórios distinguem observações, hipóteses, intervenções, validaçõe
 
 ## Próximos passos
 
-INC-004: selecionar um cenário de troubleshooting com maior complexidade operacional, priorizando Docker, serviços Linux ou redes.
+Escolher o próximo cenário na abertura do exercício. Priorizar observabilidade, capacidade ou recuperação de serviço, e manter o registro do laboratório separado de qualquer proposta ainda não implementada.
