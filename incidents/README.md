@@ -54,6 +54,18 @@ Os cenários são simulados e executados em ambientes de laboratório. As conclu
 
 [Consultar relatório INC-004](004-salta/incident-report.md)
 
+### INC-005 — Manhattan
+
+**Domínio:** Linux / PostgreSQL / Capacidade de armazenamento
+
+**Problema:** o cluster PostgreSQL 14/main não iniciava e a escrita SQL falhava porque o volume montado em `/opt/pgdata` estava sem blocos livres.
+
+**Competências exercitadas:** leitura de unidade systemd, `pg_lsclusters`, log do PostgreSQL, separação entre blocos e inodes, comparação entre o diretório de dados e arquivos adjacentes, e validação funcional da escrita.
+
+**Resultado:** escrita recuperada conforme os critérios do laboratório; checker oficial aprovado em 13min49s, sem utilização de dicas. A liberação de espaço por `truncate` ficou restrita ao ambiente descartável.
+
+[Consultar relatório INC-005](005-manhattan/incident-report.md)
+
 ## Organização das evidências
 
 Cada diretório de incidente contém:
