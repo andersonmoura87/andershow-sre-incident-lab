@@ -78,6 +78,18 @@ Os cenários são simulados e executados em ambientes de laboratório. As conclu
 
 [Consultar relatório INC-006](006-tokyo/incident-report.md)
 
+### INC-007 — Sumé
+
+**Domínio:** Linux / Knot DNS / DNS autoritativo / Nginx
+
+**Problema:** `blog.sadservers.internal` e `api.sadservers.internal` não resolviam. A zona do Knot não carregava por dados inválidos, enquanto os serviços HTTP respondiam quando o DNS era contornado.
+
+**Competências exercitadas:** separação entre resolução e HTTP, leitura de `SERVFAIL` e EDE, diagnóstico de zona Knot, teste com `curl --resolve`, backup antes da edição e validação por `zone-check`, serial e consulta DNS.
+
+**Resultado:** zona carregada e nomes resolvidos conforme os critérios do laboratório; checker oficial aprovado em 10min33s, sem utilização de dicas. A edição da zona ficou restrita ao ambiente descartável. A saída literal dos `curl` finais não foi preservada.
+
+[Consultar relatório INC-007](007-sume/incident-report.md)
+
 ## Organização das evidências
 
 Cada diretório de incidente contém:

@@ -22,6 +22,7 @@ Laboratório público de investigação e recuperação de incidentes simulados 
 | INC-004 | Salta — falha na inicialização de aplicação Node.js | Docker, Node.js, nginx, portas TCP | Resolvido; checker oficial aprovado | [Consultar INC-004](incidents/004-salta/incident-report.md) |
 | INC-005 | Manhattan — falha de escrita no PostgreSQL | Linux, PostgreSQL, capacidade de disco | Resolvido; checker oficial aprovado | [Consultar INC-005](incidents/005-manhattan/incident-report.md) |
 | INC-006 | Tokyo — arquivo web inacessível | Apache HTTP Server, Linux, firewall, permissões | Resolvido; checker oficial aprovado | [Consultar INC-006](incidents/006-tokyo/incident-report.md) |
+| INC-007 | Sumé — zona DNS inválida | Knot DNS, Linux, Nginx | Resolvido; checker oficial aprovado | [Consultar INC-007](incidents/007-sume/incident-report.md) |
 
 Os relatórios distinguem observações, hipóteses, intervenções, validações e limitações. A aprovação de um checker confirma os critérios do laboratório, não a confiabilidade de uma solução em produção.
 
