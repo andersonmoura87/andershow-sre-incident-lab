@@ -102,6 +102,18 @@ Os cenários são simulados e executados em ambientes de laboratório. As conclu
 
 [Consultar relatório INC-008](008-singara/incident-report.md)
 
+### INC-009 — Parma
+
+**Domínio:** Linux / Terraform / provider `hashicorp/local`
+
+**Problema:** `terraform plan` não rodava porque `required_version` pedia `~> 1.12.0` e o Core era 1.9.8. Depois dessa correção, o `validate` revelou um ciclo entre dois `local_file`. O marcador `/var/local/platform-status.txt` estava ausente.
+
+**Competências exercitadas:** restrição de versão do Terraform, leitura do ciclo no HCL, busca de estado local, revisão do plano antes do `apply`, permissão declarada e convergência com um segundo `plan`.
+
+**Resultado:** marcador publicado e plano sem alterações; aceite oficial em 8min49s, sem utilização de dicas. A permissão no filesystem não foi lida com `stat`. O rollback não foi executado. A aprovação veio da interface, sem checker no terminal.
+
+[Consultar relatório INC-009](009-parma/incident-report.md)
+
 ## Organização das evidências
 
 Cada diretório de incidente contém:
@@ -115,7 +127,7 @@ Não devem ser publicados segredos, credenciais, dados pessoais ou informações
 
 Os relatórios seguem os princípios definidos na [metodologia](../docs/methodology.md) e no [checklist de qualidade](../docs/incident-quality-checklist.md).
 
-Relatório novo usa o [modelo v2](../templates/incident-report.md) e começa com `<!-- template: v2 -->` na primeira linha. O INC-008 é o primeiro relatório nesse modelo. Os relatórios INC-001 a INC-007 permanecem no formato em que foram publicados. O [modelo v1](../templates/incident-report-v1.md) fica preservado como referência desse formato.
+Relatório novo usa o [modelo v2](../templates/incident-report.md) e começa com `<!-- template: v2 -->` na primeira linha. O INC-008 é o primeiro relatório nesse modelo. O INC-009 segue o mesmo modelo. Os relatórios INC-001 a INC-007 permanecem no formato em que foram publicados. O [modelo v1](../templates/incident-report-v1.md) fica preservado como referência desse formato.
 
 ## Limitações
 
