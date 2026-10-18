@@ -101,7 +101,9 @@ Não devem ser publicados segredos, credenciais, dados pessoais ou informações
 
 ## Padrões de documentação
 
-Os relatórios seguem os princípios definidos na [metodologia](../docs/methodology.md), utilizando o [modelo de incidente](../templates/incident-report.md) e o [checklist de qualidade](../docs/incident-quality-checklist.md).
+Os relatórios seguem os princípios definidos na [metodologia](../docs/methodology.md) e no [checklist de qualidade](../docs/incident-quality-checklist.md).
+
+Relatório novo usa o [modelo v2](../templates/incident-report.md) e começa com `<!-- template: v2 -->` na primeira linha. Os relatórios INC-001 a INC-007 permanecem no formato em que foram publicados. O [modelo v1](../templates/incident-report-v1.md) fica preservado como referência desse formato.
 
 ## Limitações
 
