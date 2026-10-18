@@ -114,6 +114,17 @@ Os cenários são simulados e executados em ambientes de laboratório. As conclu
 
 [Consultar relatório INC-009](009-parma/incident-report.md)
 
+### INC-010 — Buenos Aires
+
+**Domínio:** Kubernetes / RBAC / Python / ServiceAccount
+
+**Problema:** o container `logshipper` entrava em `CrashLoopBackOff` porque a Service Account `logshipper-sa` não tinha autorização para executar `get` no sub-recurso `pods/log` no namespace `default`.
+
+**Competências exercitadas:** diagnóstico de CrashLoopBackOff, interpretação de HTTP 403, análise de Service Accounts, configuração de Role e RoleBinding, princípio do menor privilégio e validação funcional por logs.
+
+**Resultado:** aplicação recuperada sem alterar a definição do pod; checker oficial aprovado em 5min50s, sem dicas, com 2 pontos. O resultado `no` de `kubectl auth can-i` após a intervenção permaneceu sem explicação confirmada.
+
+[Consultar relatório INC-010](010-buenos-aires/incident-report.md)
 ## Organização das evidências
 
 Cada diretório de incidente contém:
