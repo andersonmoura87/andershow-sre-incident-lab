@@ -90,6 +90,18 @@ Os cenários são simulados e executados em ambientes de laboratório. As conclu
 
 [Consultar relatório INC-007](007-sume/incident-report.md)
 
+### INC-008 — Singara
+
+**Domínio:** Linux / Docker / containerd / K3s / Kubernetes / Flask
+
+**Problema:** o Deployment `webapp-deployment` permanecia `0/1` porque `webapp:latest` existia no Docker Engine e não no runtime do K3s. Depois da importação, o Service não selecionava o pod e o `containerPort` divergia da porta do Flask.
+
+**Competências exercitadas:** eventos de `ImagePullBackOff`, comparação entre Docker e containerd, importação para o namespace `k8s.io`, selector de Service, distinção entre portas declaradas e a porta do processo, e separação entre checker e testes independentes.
+
+**Resultado:** aplicação recuperada conforme os critérios do laboratório; checker oficial aprovado em 13min35s, sem utilização de dicas. O HTTP pelo NodePort foi medido antes do rollout final. O acesso à porta 8888 do host não foi comprovado. A importação da imagem ficou restrita ao ambiente descartável.
+
+[Consultar relatório INC-008](008-singara/incident-report.md)
+
 ## Organização das evidências
 
 Cada diretório de incidente contém:
@@ -103,7 +115,7 @@ Não devem ser publicados segredos, credenciais, dados pessoais ou informações
 
 Os relatórios seguem os princípios definidos na [metodologia](../docs/methodology.md) e no [checklist de qualidade](../docs/incident-quality-checklist.md).
 
-Relatório novo usa o [modelo v2](../templates/incident-report.md) e começa com `<!-- template: v2 -->` na primeira linha. Os relatórios INC-001 a INC-007 permanecem no formato em que foram publicados. O [modelo v1](../templates/incident-report-v1.md) fica preservado como referência desse formato.
+Relatório novo usa o [modelo v2](../templates/incident-report.md) e começa com `<!-- template: v2 -->` na primeira linha. O INC-008 é o primeiro relatório nesse modelo. Os relatórios INC-001 a INC-007 permanecem no formato em que foram publicados. O [modelo v1](../templates/incident-report-v1.md) fica preservado como referência desse formato.
 
 ## Limitações
 
