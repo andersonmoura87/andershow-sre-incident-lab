@@ -137,6 +137,19 @@ Os cenários são simulados e executados em ambientes de laboratório. As conclu
 **Resultado:** configuração corrigida, Envoy reiniciado com sucesso e checker oficial aprovado em 13min48s, sem dicas, com 2 pontos. A resposta HTTP final não foi capturada independentemente no terminal.
 
 [Consultar relatório INC-011](011-bangalore/incident-report.md)
+
+### INC-012 — Kilifi
+
+**Domínio:** Kubernetes / Helm / K3s / scheduling / recursos
+
+**Problema:** a release Helm `kilifi` permanecia com o Pod em `Pending`. O `LimitRange` atribuía `1Gi` ao init container sem recursos, e a `RuntimeClass` `default` acrescentava `1Gi` de overhead. O request efetivo ficava acima da memória alocável do nó.
+
+**Competências exercitadas:** leitura de `FailedScheduling`, distinção entre chart e objeto admitido, `LimitRange`, overhead de `RuntimeClass`, upgrade Helm e validação de `/healthz` separada do estado `Running`.
+
+**Resultado:** serviço recuperado na segunda tentativa; checker local `OK` e interface oficial aprovada em 4m01s, sem dicas, com 2 pontos. A primeira tentativa expirou antes da prova funcional. Swap e rollback não foram verificados.
+
+[Consultar relatório INC-012](012-kilifi/incident-report.md)
+
 ## Organização das evidências
 
 Cada diretório de incidente contém:
@@ -150,7 +163,7 @@ Não devem ser publicados segredos, credenciais, dados pessoais ou informações
 
 Os relatórios seguem os princípios definidos na [metodologia](../docs/methodology.md) e no [checklist de qualidade](../docs/incident-quality-checklist.md).
 
-Relatório novo usa o [modelo v2](../templates/incident-report.md) e começa com `<!-- template: v2 -->` na primeira linha. O INC-008 é o primeiro relatório nesse modelo. O INC-009 segue o mesmo modelo. Os relatórios INC-001 a INC-007 permanecem no formato em que foram publicados. O [modelo v1](../templates/incident-report-v1.md) fica preservado como referência desse formato.
+Relatório novo usa o [modelo v2](../templates/incident-report.md) e começa com `<!-- template: v2 -->` na primeira linha. O INC-008 é o primeiro relatório nesse modelo. Do INC-009 ao INC-012, os relatórios seguem o mesmo modelo. Os relatórios INC-001 a INC-007 permanecem no formato em que foram publicados. O [modelo v1](../templates/incident-report-v1.md) fica preservado como referência desse formato.
 
 ## Limitações
 
