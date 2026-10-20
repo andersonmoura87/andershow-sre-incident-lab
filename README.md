@@ -26,7 +26,7 @@ Laboratório público de investigação e recuperação de incidentes simulados 
 | INC-008 | Singara — aplicação Flask indisponível no K3s | Linux, Docker, containerd, K3s, Kubernetes, Flask | Resolvido; checker oficial aprovado | [Consultar INC-008](incidents/008-singara/incident-report.md) |
 | INC-009 | Parma — falha de validação e publicação Terraform | Linux, Terraform, provider local | Resolvido; solução oficial aprovada | [Consultar INC-009](incidents/009-parma/incident-report.md) |
 | INC-010 | Buenos Aires — falha de autorização RBAC | Kubernetes, Python, ServiceAccount, RBAC | Resolvido; checker oficial aprovado | [Consultar INC-010](incidents/010-buenos-aires/incident-report.md) |
-
+| INC-011 | Bangalore — Envoy Panics | Docker, Envoy Proxy, health checks, load balancing | Resolvido; checker oficial aprovado | [Consultar INC-011](incidents/011-bangalore/incident-report.md) |
 Os relatórios distinguem observações, hipóteses, intervenções, validações e limitações. A aprovação de um checker confirma os critérios do laboratório, não a confiabilidade de uma solução em produção.
 
 ## Navegação

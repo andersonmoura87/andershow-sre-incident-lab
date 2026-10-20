@@ -125,6 +125,18 @@ Os cenários são simulados e executados em ambientes de laboratório. As conclu
 **Resultado:** aplicação recuperada sem alterar a definição do pod; checker oficial aprovado em 5min50s, sem dicas, com 2 pontos. O resultado `no` de `kubectl auth can-i` após a intervenção permaneceu sem explicação confirmada.
 
 [Consultar relatório INC-010](010-buenos-aires/incident-report.md)
+
+### INC-011 — Bangalore
+
+**Domínio:** Docker / Envoy Proxy / Health Checks / Load Balancing
+
+**Problema:** o container Envoy apresentava falhas de inicialização devido à referência a um cluster inexistente (`app_cluster`). Além disso, o comportamento de panic mode precisava ser ajustado para impedir o encaminhamento de tráfego aos backends não saudáveis.
+
+**Competências exercitadas:** diagnóstico de containers em reinicialização, interpretação de logs do Envoy, análise de configuração YAML, identificação de inconsistências entre rotas e clusters, configuração de `healthy_panic_threshold`, validação de configuração antes de reiniciar e verificação do serviço.
+
+**Resultado:** configuração corrigida, Envoy reiniciado com sucesso e checker oficial aprovado em 13min48s, sem dicas, com 2 pontos. A resposta HTTP final não foi capturada independentemente no terminal.
+
+[Consultar relatório INC-011](011-bangalore/incident-report.md)
 ## Organização das evidências
 
 Cada diretório de incidente contém:
